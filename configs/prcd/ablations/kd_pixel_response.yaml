@@ -1,0 +1,7 @@
+distill:
+  enabled: true
+  objective: pixel_response
+  levels: [P3]
+  baseline: {weight: 0.1}
+  spd: {enabled: false}
+  icd: {enabled: false}

@@ -1,0 +1,6 @@
+distill:
+  enabled: true
+  objective: prcd
+  crc: {enabled: true}
+  spd: {enabled: true}
+  icd: {enabled: false}

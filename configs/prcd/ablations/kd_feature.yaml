@@ -1,0 +1,7 @@
+distill:
+  enabled: true
+  objective: direct_feature
+  levels: [P3]
+  baseline: {weight: 0.1}
+  spd: {enabled: false}
+  icd: {enabled: false}

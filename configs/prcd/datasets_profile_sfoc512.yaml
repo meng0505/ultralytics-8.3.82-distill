@@ -1,0 +1,15 @@
+# SFOC uses its native 512x512 resolution. Keep this profile separate from
+# the 256x256 OGSOD profile so their feature-support recommendations cannot mix.
+imgsz: 512
+strides: [8, 16, 32]
+batch_candidates: [8, 16, 32, 64]
+default_dataset: sfoc-1.0-100k-soa-512
+
+datasets:
+  - name: sfoc-1.0-100k-soa-512
+    sar: /media/mengfanlong/111E18BA111E18BA/数据集/SFOC-1.0-100K-SOA/imagesSAR
+    optical: /media/mengfanlong/111E18BA111E18BA/数据集/SFOC-1.0-100K-SOA/images
+    labels: /media/mengfanlong/111E18BA111E18BA/数据集/SFOC-1.0-100K-SOA/labels
+    manifest: /media/mengfanlong/111E18BA111E18BA/数据集/SFOC-1.0-100K-SOA/manifests/tiles.csv
+    splits: [train, test]
+    class_names: [plane, ship]

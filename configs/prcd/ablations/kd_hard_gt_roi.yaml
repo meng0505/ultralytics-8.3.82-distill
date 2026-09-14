@@ -1,0 +1,8 @@
+distill:
+  enabled: true
+  objective: hard_gt_roi
+  levels: [P3]
+  support: {mode: hard_gt_roi}
+  baseline: {weight: 0.1}
+  spd: {enabled: false}
+  icd: {enabled: false}

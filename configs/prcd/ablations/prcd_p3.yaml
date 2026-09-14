@@ -1,0 +1,4 @@
+distill:
+  enabled: true
+  levels: [P3]
+  level_assignment: single
