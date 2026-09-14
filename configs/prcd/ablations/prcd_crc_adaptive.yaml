@@ -1,0 +1,8 @@
+distill:
+  enabled: true
+  objective: prcd
+  levels: [P3]
+  support: {mode: adaptive}
+  crc: {enabled: true}
+  spd: {enabled: false}
+  icd: {enabled: false}

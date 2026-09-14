@@ -1,0 +1,6 @@
+train: /media/mengfanlong/111E18BA111E18BA/数据集/SFOC-1.0-100K-SOA/images/train
+val: /media/mengfanlong/111E18BA111E18BA/数据集/SFOC-1.0-100K-SOA/images/test
+test: /media/mengfanlong/111E18BA111E18BA/数据集/SFOC-1.0-100K-SOA/images/test
+# Two-class task after explicit source-label remapping: 0=plane, 1=ship.
+nc: 2
+names: [plane, ship]

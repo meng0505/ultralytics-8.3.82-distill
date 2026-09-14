@@ -1,0 +1,108 @@
+{
+  "mode": "recommend_only_no_optimizer_step",
+  "batches": 4,
+  "batch_size": 8,
+  "imgsz": 256,
+  "magnitude": {
+    "detection": {
+      "mean": 3.7629122734069824,
+      "std": 0.5621838527977998,
+      "min": 2.9350123405456543,
+      "max": 4.333843231201172
+    },
+    "crc": {
+      "mean": 0.002549117140006274,
+      "std": 0.002046164087907893,
+      "min": 0.0005561085999943316,
+      "max": 0.005248371511697769
+    },
+    "spd": {
+      "mean": 1.1304732263088226,
+      "std": 0.02580340572016827,
+      "min": 1.0886074304580688,
+      "max": 1.1579229831695557
+    },
+    "icd": {
+      "mean": 0.11575871147215366,
+      "std": 0.04126797976038391,
+      "min": 0.0703522339463234,
+      "max": 0.17222748696804047
+    }
+  },
+  "student_neck_gradient_norm": {
+    "detection": {
+      "mean": 1.7704396281481385,
+      "std": 0.36674868104842495,
+      "min": 1.183917816415739,
+      "max": 2.194858707755303
+    },
+    "crc": {
+      "mean": 0.003204324526245031,
+      "std": 0.002254725152180164,
+      "min": 0.0016752462755908212,
+      "max": 0.0070824639641345
+    },
+    "spd": {
+      "mean": 0.2171535480402611,
+      "std": 0.06471234229076982,
+      "min": 0.13132607094759938,
+      "max": 0.31145764795225805
+    },
+    "icd": {
+      "mean": 0.1944359975939847,
+      "std": 0.13107221190834759,
+      "min": 0.08775252778180269,
+      "max": 0.41587067707132225
+    }
+  },
+  "validity": {
+    "crc_instances": {
+      "mean": 18.0,
+      "std": 3.391164991562634,
+      "min": 13.0,
+      "max": 22.0
+    },
+    "spd_groups": {
+      "mean": 1.5,
+      "std": 0.8660254037844386,
+      "min": 1.0,
+      "max": 3.0
+    },
+    "icd_groups": {
+      "mean": 1.5,
+      "std": 0.8660254037844386,
+      "min": 1.0,
+      "max": 3.0
+    }
+  },
+  "weight_recommendation": {
+    "crc": {
+      "target": "approximately 10% of measured detection neck-gradient norm",
+      "candidates": [
+        5.0,
+        10.0,
+        20.0
+      ],
+      "auto_applied": false
+    },
+    "spd": {
+      "target": "approximately 10% of measured detection neck-gradient norm",
+      "candidates": [
+        0.4076469493880644,
+        0.8152938987761288,
+        1.6305877975522576
+      ],
+      "auto_applied": false
+    },
+    "icd": {
+      "target": "approximately 10% of measured detection neck-gradient norm",
+      "candidates": [
+        0.4552756819869118,
+        0.9105513639738236,
+        1.8211027279476473
+      ],
+      "auto_applied": false
+    }
+  },
+  "teacher_has_grad": false
+}

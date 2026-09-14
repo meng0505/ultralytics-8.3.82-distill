@@ -1,0 +1,73 @@
+# SFOC-512 main PRCD configuration.
+#
+# The profiler conservatively proposed scale-assigned P3/P4. The research
+# requirement for the SFOC main experiment is stronger: every valid object is
+# distilled at all three common detector scales (P3/P4/P5). Adaptive support,
+# continuous-center sampling and the minimum support radius keep small-object
+# support non-empty on P5.
+distill:
+  enabled: true
+  levels: [P3, P4, P5]
+  level_assignment: all
+
+  support:
+    mode: adaptive
+    output_grid: 7
+    fixed_window: 5
+    context_margin: 1
+    radius_min: 1
+    radius_max: 4
+    exclude_neighbor_objects: true
+    core_supersample: 4
+    min_core_mass: 0.001
+
+  representation:
+    adapter: conv1x1_groupnorm
+    embedding_dim: 128
+    aggregation: concat
+
+  crc:
+    enabled: true
+    regions: 2
+    temperature: 1.0
+    response_source: class_logit
+    # Provisional until the 512 teacher is available for loss-scale probing.
+    weight: 0.1
+
+  spd:
+    enabled: true
+    prototype_momentum: 0.99
+    prototype_relation_enabled: false
+    # Provisional until the 512 teacher is available for loss-scale probing.
+    weight: 0.1
+
+  icd:
+    enabled: true
+    min_instances: 2
+    max_instances_per_class: 64
+    exclude_diagonal: true
+    pair_direction: false
+    memory_assisted: false
+    cross_rank_gather: false
+    # Provisional until the 512 teacher is available for loss-scale probing.
+    weight: 0.05
+
+  optimization:
+    distill_warmup_epochs: 10
+    loss_weight_mode: magnitude_recommendation
+    auto_apply_recommendation: false
+    class_balanced_sampling_recommended: false
+
+_profile_hash: ec5e5e40997390e89bb689f11280cfcf9257f0ee7582b83222fcdf553825528d
+_evidence:
+  profile_dataset: sfoc-1.0-100k-soa-512
+  input_size: 512
+  train_pairs: 4252
+  test_pairs: 1822
+  p3_area_lt_1: 0.10606814225317085
+  p4_area_lt_1: 0.24765812816049076
+  p5_area_lt_1: 0.4495979441266683
+  p3_mapped_max_dimension_p90: 17.865492820739746
+  class_imbalance_max_over_min: 1.6292502179598953
+  three_scale_policy: all valid objects are distilled on P3, P4 and P5 by experiment design
+  loss_weights: provisional until the SFOC-512 teacher loss-scale probe is completed

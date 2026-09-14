@@ -1,0 +1,4 @@
+distill:
+  enabled: true
+  levels: [P3, P4]
+  level_assignment: scale_assigned

@@ -1,0 +1,9 @@
+train: /home/mengfanlong/ultralytics-8.3.82-distill/dataset/images-osprc/train
+val: /home/mengfanlong/ultralytics-8.3.82-distill/dataset/images-osprc/val
+optical_train: /home/mengfanlong/ultralytics-8.3.82-distill/dataset/images-opt-osprc/train
+optical_val: /home/mengfanlong/ultralytics-8.3.82-distill/dataset/images-opt-osprc/val
+labels_train: /home/mengfanlong/ultralytics-8.3.82-distill/dataset/labels-osprc/train
+labels_val: /home/mengfanlong/ultralytics-8.3.82-distill/dataset/labels-osprc/val
+nc: 3
+names: [bridge, harbor, storage_tank]
+dataset_name: osprc

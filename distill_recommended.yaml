@@ -1,0 +1,432 @@
+distill:
+  enabled: true
+  levels:
+  - P3
+  level_assignment: single
+  support:
+    mode: adaptive
+    output_grid: 7
+    fixed_window: 5
+    context_margin: 1
+    radius_min: 1
+    radius_max: 4
+    exclude_neighbor_objects: true
+    core_supersample: 4
+    min_core_mass: 0.001
+  representation:
+    adapter: conv1x1_groupnorm
+    embedding_dim: 128
+    aggregation: concat
+  crc:
+    enabled: true
+    regions: 2
+    temperature: 1.0
+    temperature_candidates:
+    - 0.5
+    - 1.0
+    - 2.0
+    response_source: class_logit
+    weight: 5.0
+    weight_candidates:
+    - 5.0
+    - 10.0
+    - 20.0
+  spd:
+    enabled: true
+    prototype_momentum: 0.99
+    momentum_candidates:
+    - 0.9
+    - 0.99
+    - 0.999
+    prototype_relation_enabled: false
+    weight: 0.4076469493880644
+    weight_candidates:
+    - 0.4076469493880644
+    - 0.8152938987761288
+    - 1.6305877975522576
+  icd:
+    enabled: true
+    min_instances: 2
+    max_instances_per_class: 64
+    max_instances_candidates:
+    - 16
+    - 32
+    - 64
+    exclude_diagonal: true
+    pair_direction: false
+    memory_assisted: false
+    cross_rank_gather: false
+    weight: 0.4552756819869118
+    weight_candidates:
+    - 0.4552756819869118
+    - 0.9105513639738236
+    - 1.8211027279476473
+  optimization:
+    distill_warmup_epochs: 10
+    loss_weight_mode: magnitude_recommendation
+    auto_apply_recommendation: false
+    class_balanced_sampling_recommended: true
+_evidence:
+  profile_dataset: ogsod-2.0
+  input_size: 256
+  p3_area_lt_1: 0.39674127975955076
+  p3_min_dimension_lt_2: 0.915051807324211
+  next_level_area_lt_1: 0.8232487015212634
+  p3_mapped_max_dimension_p90: 4.911358165740967
+  class_imbalance_max_over_min: 6.516878804648589
+  batch_128_class_fraction_ge_2:
+  - 1.0
+  - 1.0
+  - 0.9982142857142857
+  note: Loss weights remain candidates until loss_scale_report.json measures magnitude
+    and gradient norms.
+  loss_scale_probe:
+    mode: recommend_only_no_optimizer_step
+    batch_size: 8
+    batches: 4
+    imgsz: 256
+    selected_candidate_index: 0
+    auto_applied_to_training: false
+    teacher_has_grad: false
+_profile_hash: 18884c48b7f40f38d726f02eda884f2bfdc3f7e5f8ced3a9b01b4853a7a3102d
+_per_dataset:
+  ogsod-2.0:
+    distill:
+      enabled: true
+      levels:
+      - P3
+      level_assignment: single
+      support:
+        mode: adaptive
+        output_grid: 7
+        fixed_window: 5
+        context_margin: 1
+        radius_min: 1
+        radius_max: 4
+        exclude_neighbor_objects: true
+        core_supersample: 4
+        min_core_mass: 0.001
+      representation:
+        adapter: conv1x1_groupnorm
+        embedding_dim: 128
+        aggregation: concat
+      crc:
+        enabled: true
+        regions: 2
+        temperature: 1.0
+        temperature_candidates:
+        - 0.5
+        - 1.0
+        - 2.0
+        response_source: class_logit
+        weight: 5.0
+        weight_candidates:
+        - 5.0
+        - 10.0
+        - 20.0
+      spd:
+        enabled: true
+        prototype_momentum: 0.99
+        momentum_candidates:
+        - 0.9
+        - 0.99
+        - 0.999
+        prototype_relation_enabled: false
+        weight: 0.4076469493880644
+        weight_candidates:
+        - 0.4076469493880644
+        - 0.8152938987761288
+        - 1.6305877975522576
+      icd:
+        enabled: true
+        min_instances: 2
+        max_instances_per_class: 64
+        max_instances_candidates:
+        - 16
+        - 32
+        - 64
+        exclude_diagonal: true
+        pair_direction: false
+        memory_assisted: false
+        cross_rank_gather: false
+        weight: 0.4552756819869118
+        weight_candidates:
+        - 0.4552756819869118
+        - 0.9105513639738236
+        - 1.8211027279476473
+      optimization:
+        distill_warmup_epochs: 10
+        loss_weight_mode: magnitude_recommendation
+        auto_apply_recommendation: false
+        class_balanced_sampling_recommended: true
+    _evidence:
+      profile_dataset: ogsod-2.0
+      input_size: 256
+      p3_area_lt_1: 0.39674127975955076
+      p3_min_dimension_lt_2: 0.915051807324211
+      next_level_area_lt_1: 0.8232487015212634
+      p3_mapped_max_dimension_p90: 4.911358165740967
+      class_imbalance_max_over_min: 6.516878804648589
+      batch_128_class_fraction_ge_2:
+      - 1.0
+      - 1.0
+      - 0.9982142857142857
+      note: Loss weights remain candidates until loss_scale_report.json measures magnitude
+        and gradient norms.
+      loss_scale_probe:
+        mode: recommend_only_no_optimizer_step
+        batch_size: 8
+        batches: 4
+        imgsz: 256
+        selected_candidate_index: 0
+        auto_applied_to_training: false
+        teacher_has_grad: false
+  ogsod-1.0:
+    distill:
+      enabled: true
+      levels:
+      - P3
+      level_assignment: single
+      support:
+        mode: adaptive
+        output_grid: 7
+        fixed_window: 5
+        context_margin: 1
+        radius_min: 1
+        radius_max: 4
+        exclude_neighbor_objects: true
+        core_supersample: 4
+        min_core_mass: 0.001
+      representation:
+        adapter: conv1x1_groupnorm
+        embedding_dim: 128
+        aggregation: concat
+      crc:
+        enabled: true
+        regions: 2
+        temperature: 1.0
+        temperature_candidates:
+        - 0.5
+        - 1.0
+        - 2.0
+        response_source: class_logit
+        weight: 0.1
+        weight_candidates:
+        - 0.05
+        - 0.1
+        - 0.2
+      spd:
+        enabled: true
+        prototype_momentum: 0.99
+        momentum_candidates:
+        - 0.9
+        - 0.99
+        - 0.999
+        prototype_relation_enabled: false
+        weight: 0.1
+        weight_candidates:
+        - 0.05
+        - 0.1
+        - 0.2
+      icd:
+        enabled: true
+        min_instances: 2
+        max_instances_per_class: 64
+        max_instances_candidates:
+        - 16
+        - 32
+        - 64
+        exclude_diagonal: true
+        pair_direction: false
+        memory_assisted: false
+        cross_rank_gather: false
+        weight: 0.05
+        weight_candidates:
+        - 0.02
+        - 0.05
+        - 0.1
+      optimization:
+        distill_warmup_epochs: 10
+        loss_weight_mode: magnitude_recommendation
+        auto_apply_recommendation: false
+        class_balanced_sampling_recommended: true
+    _evidence:
+      profile_dataset: ogsod-1.0
+      input_size: 256
+      p3_area_lt_1: 0.39028896987116973
+      p3_min_dimension_lt_2: 0.9242673099625315
+      next_level_area_lt_1: 0.832443668839501
+      p3_mapped_max_dimension_p90: 4.966675519943237
+      class_imbalance_max_over_min: 7.723230490018149
+      batch_128_class_fraction_ge_2:
+      - 1.0
+      - 1.0
+      - 0.9956521739130435
+      note: Loss weights remain candidates until loss_scale_report.json measures magnitude
+        and gradient norms.
+  osprc:
+    distill:
+      enabled: true
+      levels:
+      - P3
+      level_assignment: single
+      support:
+        mode: adaptive
+        output_grid: 7
+        fixed_window: 5
+        context_margin: 1
+        radius_min: 1
+        radius_max: 3
+        exclude_neighbor_objects: true
+        core_supersample: 4
+        min_core_mass: 0.001
+      representation:
+        adapter: conv1x1_groupnorm
+        embedding_dim: 128
+        aggregation: concat
+      crc:
+        enabled: true
+        regions: 2
+        temperature: 1.0
+        temperature_candidates:
+        - 0.5
+        - 1.0
+        - 2.0
+        response_source: class_logit
+        weight: 0.1
+        weight_candidates:
+        - 0.05
+        - 0.1
+        - 0.2
+      spd:
+        enabled: true
+        prototype_momentum: 0.9
+        momentum_candidates:
+        - 0.9
+        - 0.99
+        - 0.999
+        prototype_relation_enabled: false
+        weight: 0.1
+        weight_candidates:
+        - 0.05
+        - 0.1
+        - 0.2
+      icd:
+        enabled: true
+        min_instances: 2
+        max_instances_per_class: 64
+        max_instances_candidates:
+        - 16
+        - 32
+        - 64
+        exclude_diagonal: true
+        pair_direction: false
+        memory_assisted: false
+        cross_rank_gather: false
+        weight: 0.05
+        weight_candidates:
+        - 0.02
+        - 0.05
+        - 0.1
+      optimization:
+        distill_warmup_epochs: 10
+        loss_weight_mode: magnitude_recommendation
+        auto_apply_recommendation: false
+        class_balanced_sampling_recommended: true
+    _evidence:
+      profile_dataset: osprc
+      input_size: 256
+      p3_area_lt_1: 0.6874618204031765
+      p3_min_dimension_lt_2: 0.9301313378130727
+      next_level_area_lt_1: 0.892104459376909
+      p3_mapped_max_dimension_p90: 2.629551649093628
+      class_imbalance_max_over_min: 5.8375325803649005
+      batch_128_class_fraction_ge_2:
+      - 1.0
+      - 1.0
+      - 1.0
+      note: Loss weights remain candidates until loss_scale_report.json measures magnitude
+        and gradient norms.
+  sfoc-1.0-100k-soa:
+    distill:
+      enabled: true
+      levels:
+      - P3
+      - P4
+      level_assignment: scale_assigned
+      support:
+        mode: adaptive
+        output_grid: 7
+        fixed_window: 5
+        context_margin: 1
+        radius_min: 1
+        radius_max: 4
+        exclude_neighbor_objects: true
+        core_supersample: 4
+        min_core_mass: 0.001
+      representation:
+        adapter: conv1x1_groupnorm
+        embedding_dim: 128
+        aggregation: concat
+      crc:
+        enabled: true
+        regions: 2
+        temperature: 1.0
+        temperature_candidates:
+        - 0.5
+        - 1.0
+        - 2.0
+        response_source: class_logit
+        weight: 0.1
+        weight_candidates:
+        - 0.05
+        - 0.1
+        - 0.2
+      spd:
+        enabled: true
+        prototype_momentum: 0.9
+        momentum_candidates:
+        - 0.9
+        - 0.99
+        - 0.999
+        prototype_relation_enabled: false
+        weight: 0.1
+        weight_candidates:
+        - 0.05
+        - 0.1
+        - 0.2
+      icd:
+        enabled: true
+        min_instances: 2
+        max_instances_per_class: 64
+        max_instances_candidates:
+        - 16
+        - 32
+        - 64
+        exclude_diagonal: true
+        pair_direction: false
+        memory_assisted: false
+        cross_rank_gather: false
+        weight: 0.05
+        weight_candidates:
+        - 0.02
+        - 0.05
+        - 0.1
+      optimization:
+        distill_warmup_epochs: 10
+        loss_weight_mode: magnitude_recommendation
+        auto_apply_recommendation: false
+        class_balanced_sampling_recommended: false
+    _evidence:
+      profile_dataset: sfoc-1.0-100k-soa
+      input_size: 256
+      p3_area_lt_1: 0.24765812816049076
+      p3_min_dimension_lt_2: 0.6235181961369477
+      next_level_area_lt_1: 0.4495979441266683
+      p3_mapped_max_dimension_p90: 8.932746410369873
+      class_imbalance_max_over_min: 1.6292502179598953
+      batch_128_class_fraction_ge_2:
+      - 1.0
+      - 1.0
+      note: Loss weights remain candidates until loss_scale_report.json measures magnitude
+        and gradient norms.

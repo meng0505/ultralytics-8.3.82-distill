@@ -1,0 +1,12 @@
+train: /media/mengfanlong/111E18BA111E18BA/数据集/OGSOD-2.0/imagesSAR/train/images
+val: /media/mengfanlong/111E18BA111E18BA/数据集/OGSOD-2.0/imagesSAR/val/images
+test: /media/mengfanlong/111E18BA111E18BA/数据集/OGSOD-2.0/imagesSAR/test/images
+optical_train: /media/mengfanlong/111E18BA111E18BA/数据集/OGSOD-2.0/images/train/images
+optical_val: /media/mengfanlong/111E18BA111E18BA/数据集/OGSOD-2.0/images/val/images
+optical_test: /media/mengfanlong/111E18BA111E18BA/数据集/OGSOD-2.0/images/test/images
+labels_train: /media/mengfanlong/111E18BA111E18BA/数据集/OGSOD-2.0/labels/train
+labels_val: /media/mengfanlong/111E18BA111E18BA/数据集/OGSOD-2.0/labels/val
+labels_test: /media/mengfanlong/111E18BA111E18BA/数据集/OGSOD-2.0/labels/test
+nc: 3
+names: [bridge, harbor, storage_tank]
+dataset_name: ogsod-2.0

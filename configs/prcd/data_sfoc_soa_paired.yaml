@@ -1,0 +1,13 @@
+train: /media/mengfanlong/111E18BA111E18BA/数据集/SFOC-1.0-100K-SOA/imagesSAR/train
+val: /media/mengfanlong/111E18BA111E18BA/数据集/SFOC-1.0-100K-SOA/imagesSAR/test
+test: /media/mengfanlong/111E18BA111E18BA/数据集/SFOC-1.0-100K-SOA/imagesSAR/test
+optical_train: /media/mengfanlong/111E18BA111E18BA/数据集/SFOC-1.0-100K-SOA/images/train
+optical_val: /media/mengfanlong/111E18BA111E18BA/数据集/SFOC-1.0-100K-SOA/images/test
+labels_train: /media/mengfanlong/111E18BA111E18BA/数据集/SFOC-1.0-100K-SOA/labels/train
+labels_val: /media/mengfanlong/111E18BA111E18BA/数据集/SFOC-1.0-100K-SOA/labels/test
+labels_test: /media/mengfanlong/111E18BA111E18BA/数据集/SFOC-1.0-100K-SOA/labels/test
+pair_manifest: /media/mengfanlong/111E18BA111E18BA/数据集/SFOC-1.0-100K-SOA/manifests/tiles.csv
+# Two-class task after explicit source-label remapping: 0=plane, 1=ship.
+nc: 2
+names: [plane, ship]
+dataset_name: sfoc-1.0-100k-soa

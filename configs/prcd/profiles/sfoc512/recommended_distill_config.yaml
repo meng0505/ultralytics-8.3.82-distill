@@ -1,0 +1,167 @@
+distill:
+  enabled: true
+  levels:
+  - P3
+  - P4
+  level_assignment: scale_assigned
+  support:
+    mode: adaptive
+    output_grid: 7
+    fixed_window: 5
+    context_margin: 1
+    radius_min: 1
+    radius_max: 4
+    exclude_neighbor_objects: true
+    core_supersample: 4
+    min_core_mass: 0.001
+  representation:
+    adapter: conv1x1_groupnorm
+    embedding_dim: 128
+    aggregation: concat
+  crc:
+    enabled: true
+    regions: 2
+    temperature: 1.0
+    temperature_candidates:
+    - 0.5
+    - 1.0
+    - 2.0
+    response_source: class_logit
+    weight: 0.1
+    weight_candidates:
+    - 0.05
+    - 0.1
+    - 0.2
+  spd:
+    enabled: true
+    prototype_momentum: 0.99
+    momentum_candidates:
+    - 0.9
+    - 0.99
+    - 0.999
+    prototype_relation_enabled: false
+    weight: 0.1
+    weight_candidates:
+    - 0.05
+    - 0.1
+    - 0.2
+  icd:
+    enabled: true
+    min_instances: 2
+    max_instances_per_class: 64
+    max_instances_candidates:
+    - 16
+    - 32
+    - 64
+    exclude_diagonal: true
+    pair_direction: false
+    memory_assisted: false
+    cross_rank_gather: false
+    weight: 0.05
+    weight_candidates:
+    - 0.02
+    - 0.05
+    - 0.1
+  optimization:
+    distill_warmup_epochs: 10
+    loss_weight_mode: magnitude_recommendation
+    auto_apply_recommendation: false
+    class_balanced_sampling_recommended: false
+_evidence:
+  profile_dataset: sfoc-1.0-100k-soa-512
+  input_size: 512
+  p3_area_lt_1: 0.10606814225317085
+  p3_min_dimension_lt_2: 0.38560059686645115
+  next_level_area_lt_1: 0.24765812816049076
+  p3_mapped_max_dimension_p90: 17.865492820739746
+  class_imbalance_max_over_min: 1.6292502179598953
+  batch_64_class_fraction_ge_2:
+  - 1.0
+  - 1.0
+  note: Loss weights remain candidates until loss_scale_report.json measures magnitude
+    and gradient norms.
+_profile_hash: ec5e5e40997390e89bb689f11280cfcf9257f0ee7582b83222fcdf553825528d
+_per_dataset:
+  sfoc-1.0-100k-soa-512:
+    distill:
+      enabled: true
+      levels:
+      - P3
+      - P4
+      level_assignment: scale_assigned
+      support:
+        mode: adaptive
+        output_grid: 7
+        fixed_window: 5
+        context_margin: 1
+        radius_min: 1
+        radius_max: 4
+        exclude_neighbor_objects: true
+        core_supersample: 4
+        min_core_mass: 0.001
+      representation:
+        adapter: conv1x1_groupnorm
+        embedding_dim: 128
+        aggregation: concat
+      crc:
+        enabled: true
+        regions: 2
+        temperature: 1.0
+        temperature_candidates:
+        - 0.5
+        - 1.0
+        - 2.0
+        response_source: class_logit
+        weight: 0.1
+        weight_candidates:
+        - 0.05
+        - 0.1
+        - 0.2
+      spd:
+        enabled: true
+        prototype_momentum: 0.99
+        momentum_candidates:
+        - 0.9
+        - 0.99
+        - 0.999
+        prototype_relation_enabled: false
+        weight: 0.1
+        weight_candidates:
+        - 0.05
+        - 0.1
+        - 0.2
+      icd:
+        enabled: true
+        min_instances: 2
+        max_instances_per_class: 64
+        max_instances_candidates:
+        - 16
+        - 32
+        - 64
+        exclude_diagonal: true
+        pair_direction: false
+        memory_assisted: false
+        cross_rank_gather: false
+        weight: 0.05
+        weight_candidates:
+        - 0.02
+        - 0.05
+        - 0.1
+      optimization:
+        distill_warmup_epochs: 10
+        loss_weight_mode: magnitude_recommendation
+        auto_apply_recommendation: false
+        class_balanced_sampling_recommended: false
+    _evidence:
+      profile_dataset: sfoc-1.0-100k-soa-512
+      input_size: 512
+      p3_area_lt_1: 0.10606814225317085
+      p3_min_dimension_lt_2: 0.38560059686645115
+      next_level_area_lt_1: 0.24765812816049076
+      p3_mapped_max_dimension_p90: 17.865492820739746
+      class_imbalance_max_over_min: 1.6292502179598953
+      batch_64_class_fraction_ge_2:
+      - 1.0
+      - 1.0
+      note: Loss weights remain candidates until loss_scale_report.json measures magnitude
+        and gradient norms.

@@ -1,0 +1,19 @@
+imgsz: 256
+strides: [8, 16, 32]
+batch_candidates: [16, 32, 64, 128]
+default_dataset: ogsod-2.0
+
+datasets:
+  - name: ogsod-2.0
+    sar: /media/mengfanlong/111E18BA111E18BA/数据集/OGSOD-2.0/imagesSAR/{split}/images
+    optical: /media/mengfanlong/111E18BA111E18BA/数据集/OGSOD-2.0/images/{split}/images
+    labels: /media/mengfanlong/111E18BA111E18BA/数据集/OGSOD-2.0/labels/{split}
+    splits: [train, val, test]
+    class_names: [bridge, harbor, storage_tank]
+
+  - name: ogsod-1.0
+    sar: /media/mengfanlong/111E18BA111E18BA/数据集/OGSOD-1.0/imagesSAR/images/{split}
+    optical: /media/mengfanlong/111E18BA111E18BA/数据集/OGSOD-1.0/images/images/{split}
+    labels: /media/mengfanlong/111E18BA111E18BA/数据集/OGSOD-1.0/labels/{split}
+    splits: [train, val]
+    class_names: [bridge, harbor, storage_tank]
